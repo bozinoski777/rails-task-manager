@@ -1,5 +1,12 @@
+<!-- <i class="far fa-plus-square"></i><h3></h3> -->
+<div class="d-flex">
+  <%= link_to '/tasks/new' do %>
+    <i class="far fa-plus-square fa-3x"></i><h2 style="margin: 0px";>Add New Task</h2>
+  <% end %>
+</div>
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task) %> </li>
+    <li><%= link_to task.title, task_path(task)%> </li>
+    <%= link_to 'Delete task', task_path(task), method: :delete, data: { confirm: "Are you sure you want to delete?"}   %>
   <% end %>
 </ul>
